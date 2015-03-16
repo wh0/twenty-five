@@ -1,0 +1,29 @@
+<!doctype html>
+<style>
+#tl{position:absolute;top:0px;left:0px;background:#303030 url(tl.svg) bottom right;}
+#tr{position:absolute;top:0px;right:0px;background:#202020 url(tr.svg) bottom left;}
+#bl{position:absolute;bottom:0px;left:0px;background:#101010 url(bl.svg) top right;}
+#br{position:absolute;bottom:0px;right:0px;background:#000000 url(br.svg) top left;}
+</style>
+<div id="tl"></div>
+<div id="tr"></div>
+<div id="bl"></div>
+<div id="br"></div>
+<script>
+var tl = document.getElementById('tl');
+var tr = document.getElementById('tr');
+var bl = document.getElementById('bl');
+var br = document.getElementById('br');
+window.addEventListener('click', function (e) {
+	var x = (window.screen.width >> 1) - e.screenX + e.clientX;
+	var y = (window.screen.height >> 1) - e.screenY + e.clientY;
+	tl.style.width = x + 'px';
+	tl.style.height = y + 'px';
+	tr.style.left = x + 'px';
+	tr.style.height = y + 'px';
+	bl.style.width = x + 'px';
+	bl.style.top = y + 'px';
+	br.style.left = x + 'px';
+	br.style.top = y + 'px';
+});
+</script>
